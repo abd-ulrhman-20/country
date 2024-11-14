@@ -1,0 +1,175 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1 rem = 10px
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Host Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+}
+//header styling 
+.header {
+    background-color: white;
+    box-shadow: 0px .2rem 5rem rgba(0, 0, 0, 0.2);
+
+    &__top {
+        max-width: 140rem;
+        height: 6.4rem;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 1.6rem;
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            letter-spacing: 1.1;
+        }
+
+        .theme-toggle {
+            background-color: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+    }
+}
+//search div styling 
+.search {
+    max-width: 140rem;
+    margin: auto;
+    padding: 0rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 12.4rem;
+    gap: 1.6rem;
+    //input styling 
+    &__input {
+        font-family: inherit;
+        background-color: white;
+        border: none;
+        border-radius: .4rem;
+        height: 4.8rem;
+        padding: 1rem;
+        width: 90%;
+        max-width: 50rem;
+        font-size: 1.6rem;
+        box-shadow: .1rem .1rem 1.6rem rgba(0, 0, 0, 0.2);
+        transition: box-shadow .3s;
+
+        &:focus {
+            box-shadow: .2rem .2rem 2.4rem rgba(0, 0, 0, 0.4);
+            border: none;
+            outline: none;
+        }
+
+    }
+    // select styling 
+    &__select {
+        font-family: inherit;
+        background-color: white;
+        border: none;
+        border-radius: .4rem;
+        height: 4.8rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        width: 90%;
+        max-width: 20rem;
+        text-align: center;
+        box-shadow: .1rem .1rem 1.6rem rgba(0, 0, 0, 0.2);
+        transition: box-shadow .3s;
+
+        &:focus {
+            box-shadow: .2rem .2rem 2.4rem rgba(0, 0, 0, 0.4);
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+//main styling
+main {
+    padding: 15px;
+
+    #countries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 15px;
+        max-width: 1400px;
+        width: 100%;
+        margin: auto;
+    }
+    //country card styling
+    .country-card {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: .8rem;
+        box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        text-align: center;
+        transition: transform 0.3s;
+        &:hover{
+            transform: scale(1.05);
+        }
+        //country card image styling 
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        //country card h3 styling 
+        h3{
+            font-size: 2.4rem;
+        }
+        //country card p styling 
+        p{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+//dark mode styling 
+body.dark-mode {
+    background-color:#202c37 ;
+    .header{
+        color: #f0f4f8;
+        background-color: #2b3945;
+    }
+    .theme-toggle{
+        color: #f0f4f8;
+    }
+    .search{
+        &__input{
+            background-color: #2b3945;
+            color: #f0f4f8;
+            &::placeholder{
+                color: #909ba3;
+            }
+        }
+         &__select{
+            background-color: #2b3945;
+            color: #f0f4f8;
+        }
+        
+    }
+    .country-card{
+        background-color: #2b3945;
+        color: #f0f4f8;
+    }
+  }
+  
+  
